@@ -21,8 +21,21 @@ module.exports = {
         loader: "babel-loader",
         exclude: /node_modules/,
         options: {
-          presets: ["@babel/preset-env", "@babel/preset-react"]
+          presets: ["@babel/preset-env", "@babel/preset-react"],
+          // used for class components where state is defined state = { count: 0 }
+          plugins: [
+            // useful for applying changes without resetting any state
+            // when running hot reload
+            "react-hot-loader/babel",
+            "@babel/plugin-proposal-class-properties"
+          ]
         }
+      },
+      {
+        test: /\.css$/,
+        // you use 'use instead of loader when theres more than 1'
+        use: ["style-loader", "css-loader"],
+        exclude: /node_modules/
       }
     ]
   },
