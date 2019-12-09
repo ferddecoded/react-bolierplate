@@ -21,7 +21,16 @@ module.exports = {
         loader: "babel-loader",
         exclude: /node_modules/,
         options: {
-          presets: ["@babel/preset-env", "@babel/preset-react"],
+          presets: [
+            [
+              "@babel/preset-env",
+              {
+                targets: ["last 2 versions", "not dead", "not < 2%"],
+                useBuiltIns: "entry"
+              }
+            ],
+            "@babel/preset-react"
+          ],
           // used for class components where state is defined state = { count: 0 }
           plugins: [
             // useful for applying changes without resetting any state
