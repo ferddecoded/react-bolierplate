@@ -4,6 +4,7 @@ import { hot } from "react-hot-loader";
 const Warning = React.lazy(() => import("./Warning"));
 
 const App = () => {
+  // throw new Error("This is an error message that bubles to the error boundary");
   const [count, setCount] = useState(0);
   return (
     <div>
