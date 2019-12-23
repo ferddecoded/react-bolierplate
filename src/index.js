@@ -1,11 +1,16 @@
 import React from 'react'
-import ReactDom from 'react-dom'
+import ReactDOM from 'react-dom'
 import '@babel/polyfill'
 import App from './App'
 import DefaultErrorBoundary from './DefaultErrorBoundary'
 import './style.css'
 
-ReactDom.render(
+if (process.env.NODE_ENV === 'development') {
+  const axe = require('react-axe')
+  axe(React, ReactDOM, 1000)
+}
+
+ReactDOM.render(
   <DefaultErrorBoundary>
     <App />
   </DefaultErrorBoundary>,

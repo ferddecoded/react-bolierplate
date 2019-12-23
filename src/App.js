@@ -7,7 +7,7 @@ const App = () => {
   // throw new Error("This is an error message that bubles to the error boundary");
   const [count, setCount] = useState(0)
   return (
-    <div>
+    <main>
       <h1>Hello World!!</h1>
       <img alt="logo" src="./logo.png" />
       <h2 className={count > 10 ? 'warning' : null}>Count: {count}</h2>
@@ -18,7 +18,7 @@ const App = () => {
           <Warning />
         </React.Suspense>
       ) : null}
-    </div>
+    </main>
   )
 }
 
