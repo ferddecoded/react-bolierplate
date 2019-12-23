@@ -1,12 +1,13 @@
-import React from "react";
-import { render } from "react-testing-library";
+import React from 'react'
+import { render } from '@testing-library/react'
 // adds extra matchers specific to testing dom
-import "jest-dom/extend-expect";
+import '@testing-library/jest-dom/extend-expect'
 // run code after each test that will clean up virtual dom so that there is no reminaing state between trests
-import "react-testing-library/cleanup-after-each";
+// import "@testing-library/react/cleanup-after-each";
+import App from './App'
 
-describe("App", () => {
-  it("Renders without error", () => {
-    render(<App />);
-  });
-});
+describe('App', () => {
+  it('Renders without error', () => {
+    render(<App />)
+  })
+})

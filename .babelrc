@@ -1,0 +1,25 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": ["last 2 versions", "not dead", "not < 2%"],
+        "useBuiltIns": "entry"
+      }
+    ],
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    // useful for applying changes without resetting any state
+    // when running hot reload
+    "react-hot-loader/babel",
+    // used for class components where state is defined state = { count: 0 }
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-syntax-dynamic-import"
+  ],
+  "env": {
+    "test": {
+      "plugins": ["dynamic-import-node"]
+    }
+  }
+}
